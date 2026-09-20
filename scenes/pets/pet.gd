@@ -84,7 +84,7 @@ func _apply(pet_data: PetData) -> void:
 
 	ai.move_speed = pet_data.move_speed
 
-	visual.setup(pet_data.sprite_frames, pet_data.visual_scale)
+	visual.setup(pet_data)
 
 
 ## 場上節點與 PetInstance 的 HP 同步。

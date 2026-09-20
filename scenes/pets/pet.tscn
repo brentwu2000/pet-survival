@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://scenes/pets/pet.gd" id="1_pet"]
 [ext_resource type="Script" path="res://scenes/pets/pet_visual.gd" id="2_visual"]
@@ -14,6 +14,13 @@
 radius = 0.35
 height = 1.2
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pet_placeholder"]
+radius = 0.35
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pet_placeholder"]
+albedo_color = Color(1, 1, 1, 1)
+
 [node name="Pet" type="CharacterBody3D"]
 collision_layer = 260
 collision_mask = 17
@@ -28,6 +35,24 @@ script = ExtResource("2_visual")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Visual"]
 offset = Vector2(0, 32)
+
+[node name="Placeholder" type="MeshInstance3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_pet_placeholder")
+material_override = SubResource("StandardMaterial3D_pet_placeholder")
+
+[node name="NameLabel" type="Label3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+fixed_size = true
+pixel_size = 0.0007
+font_size = 64
+outline_size = 16
+modulate = Color(1, 1, 1, 1)
+outline_modulate = Color(0, 0, 0, 1)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.9

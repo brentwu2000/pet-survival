@@ -18,6 +18,8 @@ const PIXEL_SIZE := 0.025
 @export_enum("4 方向:4", "8 方向:8") var direction_count: int = 8
 
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
+@onready var placeholder: MeshInstance3D = $Placeholder
+@onready var name_label: Label3D = $NameLabel
 
 var _body: Node3D = null
 var _direction_index: int = 0
@@ -68,10 +70,28 @@ func _process(_delta: float) -> void:
 		_refresh()
 
 
-func setup(frames: SpriteFrames, visual_scale: float) -> void:
-	sprite.sprite_frames = frames
-	scale = Vector3.ONE * visual_scale
+func setup(data: PetData) -> void:
+	sprite.sprite_frames = data.sprite_frames
+	scale = Vector3.ONE * data.visual_scale
+	_show_placeholder(data)
 	_refresh()
+
+
+## 還沒有正式素材的怪獸不可以是隱形的——沒有 SpriteFrames 就顯示
+## 一個屬性配色的膠囊加名牌，素材接上之後自動讓位。
+## 主角用的是同一招（`player_visual.gd`），不要再發明第二種頂替方式。
+func _show_placeholder(data: PetData) -> void:
+	var missing_art := data.sprite_frames == null
+	placeholder.visible = missing_art
+	name_label.visible = missing_art
+	if not missing_art:
+		return
+	name_label.text = data.display_name
+	# material_override 是 pet.tscn 裡的 SubResource，場上每隻共用同一份。
+	# 不 duplicate 的話最後 setup 的那隻會把顏色套到所有人身上。
+	var material := placeholder.material_override.duplicate() as StandardMaterial3D
+	material.albedo_color = Element.COLORS.get(data.element, Color.WHITE)
+	placeholder.material_override = material
 
 
 ## 由 PetAI 的 state_changed 驅動（PetAI 落地後接上）。
