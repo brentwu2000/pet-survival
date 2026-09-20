@@ -1,0 +1,341 @@
+[gd_resource type="SpriteFrames" load_steps=65 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_s_0.png" id="1_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_s_1.png" id="2_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_s_2.png" id="3_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_s_3.png" id="4_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_se_0.png" id="5_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_se_1.png" id="6_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_se_2.png" id="7_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_se_3.png" id="8_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_e_0.png" id="9_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_e_1.png" id="10_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_e_2.png" id="11_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_e_3.png" id="12_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_ne_0.png" id="13_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_ne_1.png" id="14_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_ne_2.png" id="15_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_ne_3.png" id="16_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_n_0.png" id="17_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_n_1.png" id="18_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_n_2.png" id="19_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_n_3.png" id="20_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_nw_0.png" id="21_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_nw_1.png" id="22_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_nw_2.png" id="23_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_nw_3.png" id="24_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_w_0.png" id="25_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_w_1.png" id="26_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_w_2.png" id="27_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_w_3.png" id="28_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_sw_0.png" id="29_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_sw_1.png" id="30_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_sw_2.png" id="31_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/idle_sw_3.png" id="32_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_s_0.png" id="33_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_s_1.png" id="34_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_s_2.png" id="35_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_s_3.png" id="36_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_se_0.png" id="37_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_se_1.png" id="38_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_se_2.png" id="39_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_se_3.png" id="40_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_e_0.png" id="41_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_e_1.png" id="42_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_e_2.png" id="43_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_e_3.png" id="44_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_ne_0.png" id="45_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_ne_1.png" id="46_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_ne_2.png" id="47_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_ne_3.png" id="48_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_n_0.png" id="49_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_n_1.png" id="50_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_n_2.png" id="51_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_n_3.png" id="52_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_nw_0.png" id="53_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_nw_1.png" id="54_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_nw_2.png" id="55_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_nw_3.png" id="56_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_w_0.png" id="57_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_w_1.png" id="58_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_w_2.png" id="59_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_w_3.png" id="60_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_sw_0.png" id="61_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_sw_1.png" id="62_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_sw_2.png" id="63_p"]
+[ext_resource type="Texture2D" path="res://assets/player/yellow_robot/walk_sw_3.png" id="64_p"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p")
+}],
+"loop": true,
+"name": &"idle_s",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p")
+}],
+"loop": true,
+"name": &"idle_se",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p")
+}],
+"loop": true,
+"name": &"idle_e",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p")
+}],
+"loop": true,
+"name": &"idle_ne",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p")
+}],
+"loop": true,
+"name": &"idle_n",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_p")
+}],
+"loop": true,
+"name": &"idle_nw",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_p")
+}],
+"loop": true,
+"name": &"idle_w",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_p")
+}],
+"loop": true,
+"name": &"idle_sw",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_p")
+}],
+"loop": true,
+"name": &"walk_s",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_p")
+}],
+"loop": true,
+"name": &"walk_se",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_p")
+}],
+"loop": true,
+"name": &"walk_e",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_p")
+}],
+"loop": true,
+"name": &"walk_ne",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_p")
+}],
+"loop": true,
+"name": &"walk_n",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_p")
+}],
+"loop": true,
+"name": &"walk_nw",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_p")
+}],
+"loop": true,
+"name": &"walk_w",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_p")
+}],
+"loop": true,
+"name": &"walk_sw",
+"speed": 10.0
+}]

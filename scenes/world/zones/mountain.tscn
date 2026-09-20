@@ -1,0 +1,166 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/zone.gd" id="1_zone"]
+
+[sub_resource type="PlaneMesh" id="GroundPlane"]
+size = Vector2(44.0, 44.0)
+
+[sub_resource type="StandardMaterial3D" id="GroundMat"]
+albedo_color = Color(0.42, 0.4, 0.37, 1.0)
+
+[sub_resource type="CylinderMesh" id="PeakMesh"]
+top_radius = 0.6
+bottom_radius = 11.0
+height = 15.0
+radial_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="PeakMat"]
+albedo_color = Color(0.48, 0.46, 0.44, 1.0)
+
+[sub_resource type="CylinderShape3D" id="PeakShape"]
+radius = 6.6
+height = 15.0
+
+[sub_resource type="BoxMesh" id="CaveMouth"]
+size = Vector3(5.0, 5.0, 2.0)
+
+[sub_resource type="StandardMaterial3D" id="CaveMat"]
+albedo_color = Color(0.05, 0.05, 0.06, 1.0)
+
+[sub_resource type="BoxShape3D" id="CaveShape"]
+size = Vector3(5.0, 5.0, 2.0)
+
+[sub_resource type="BoxMesh" id="CaveFrame"]
+size = Vector3(6.5, 6.0, 1.0)
+
+[sub_resource type="StandardMaterial3D" id="CaveFrameMat"]
+albedo_color = Color(0.36, 0.34, 0.32, 1.0)
+
+[sub_resource type="BoxMesh" id="OreMesh"]
+size = Vector3(1.2, 1.0, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="OreMat"]
+albedo_color = Color(0.75, 0.65, 0.25, 1.0)
+
+[sub_resource type="BoxShape3D" id="OreShape"]
+size = Vector3(1.2, 1.0, 1.2)
+
+[node name="Mountain" type="Node3D"]
+script = ExtResource("1_zone")
+zone_id = &"mountain"
+display_name = "山區"
+has_element = true
+element = 4
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("GroundPlane")
+material_override = SubResource("GroundMat")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Peak1" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 7.5, -8)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Peak1"]
+mesh = SubResource("PeakMesh")
+material_override = SubResource("PeakMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Peak1"]
+shape = SubResource("PeakShape")
+
+[node name="Peak2" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 7.5, -12)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Peak2"]
+mesh = SubResource("PeakMesh")
+material_override = SubResource("PeakMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Peak2"]
+shape = SubResource("PeakShape")
+
+[node name="Peak3" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7.5, 2)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Peak3"]
+mesh = SubResource("PeakMesh")
+material_override = SubResource("PeakMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Peak3"]
+shape = SubResource("PeakShape")
+
+[node name="CaveEntrance" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0, 2.5, -1.0)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/CaveEntrance"]
+mesh = SubResource("CaveMouth")
+material_override = SubResource("CaveMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/CaveEntrance"]
+shape = SubResource("CaveShape")
+
+[node name="CaveFrame" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0, 3.0, -1.8)
+mesh = SubResource("CaveFrame")
+material_override = SubResource("CaveFrameMat")
+
+[node name="Ore1" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 8)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Ore1"]
+mesh = SubResource("OreMesh")
+material_override = SubResource("OreMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Ore1"]
+shape = SubResource("OreShape")
+
+[node name="Ore2" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, 0.9397, -3, 0.5, 12)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Ore2"]
+mesh = SubResource("OreMesh")
+material_override = SubResource("OreMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Ore2"]
+shape = SubResource("OreShape")
+
+[node name="Ore3" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.766, 0, -0.6428, 0, 1, 0, 0.6428, 0, 0.766, 11, 0.5, 10)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Ore3"]
+mesh = SubResource("OreMesh")
+material_override = SubResource("OreMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Ore3"]
+shape = SubResource("OreShape")
+
+[node name="Ore4" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.5, 0, -0.866, 0, 1, 0, 0.866, 0, 0.5, -14, 0.5, 7)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Ore4"]
+mesh = SubResource("OreMesh")
+material_override = SubResource("OreMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Ore4"]
+shape = SubResource("OreShape")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="CaveEntranceMarker" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0, 0, 1.0)

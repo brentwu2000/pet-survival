@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scenes/player/player_visual.gd" id="2_visual"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+radius = 0.3
+height = 1.45
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_player"]
+radius = 0.3
+height = 1.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_player"]
+albedo_color = Color(0.95, 0.75, 0.15, 1)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 17
+script = ExtResource("1_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="Visual" type="Node3D" parent="."]
+script = ExtResource("2_visual")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Visual"]
+offset = Vector2(0, 27)
+
+[node name="Placeholder" type="MeshInstance3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
+mesh = SubResource("CapsuleMesh_player")
+material_override = SubResource("StandardMaterial3D_player")

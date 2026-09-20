@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scenes/pets/pet.gd" id="1_pet"]
+[ext_resource type="Script" path="res://scenes/pets/pet_visual.gd" id="2_visual"]
+[ext_resource type="Script" path="res://scripts/components/health_component.gd" id="3_health"]
+[ext_resource type="Script" path="res://scripts/components/combat_component.gd" id="4_combat"]
+[ext_resource type="Script" path="res://scripts/components/skill_component.gd" id="5_skill"]
+[ext_resource type="Script" path="res://scripts/components/target_component.gd" id="6_target"]
+[ext_resource type="Script" path="res://scripts/ai/pet_ai.gd" id="7_ai"]
+[ext_resource type="Script" path="res://scenes/pets/selection_indicator.gd" id="8_select"]
+[ext_resource type="Script" path="res://scenes/pets/health_bar.gd" id="9_hpbar"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pet"]
+radius = 0.35
+height = 1.2
+
+[node name="Pet" type="CharacterBody3D"]
+collision_layer = 260
+collision_mask = 17
+script = ExtResource("1_pet")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CapsuleShape3D_pet")
+
+[node name="Visual" type="Node3D" parent="."]
+script = ExtResource("2_visual")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Visual"]
+offset = Vector2(0, 32)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.9
+target_desired_distance = 1.0
+radius = 0.4
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_health")
+
+[node name="CombatComponent" type="Node" parent="."]
+script = ExtResource("4_combat")
+
+[node name="SkillComponent" type="Node" parent="."]
+script = ExtResource("5_skill")
+
+[node name="TargetComponent" type="Node" parent="."]
+script = ExtResource("6_target")
+
+[node name="PetAI" type="Node" parent="."]
+script = ExtResource("7_ai")
+
+[node name="SelectionIndicator" type="MeshInstance3D" parent="."]
+script = ExtResource("8_select")
+
+[node name="HealthBar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+script = ExtResource("9_hpbar")

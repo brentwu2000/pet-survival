@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1_skill_data"]
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"earth_quake"
+display_name = "大地震動"
+element = 4
+power = 30.0
+cooldown = 7.0
+cast_time = 0.6
+cast_range = 5.0
+animation_name = &"skill"

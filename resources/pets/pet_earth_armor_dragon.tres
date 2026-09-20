@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PetData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/pet_data.gd" id="1_pet_data"]
+[ext_resource type="Resource" path="res://resources/skills/skill_rock_charge.tres" id="2_basic"]
+[ext_resource type="Resource" path="res://resources/skills/skill_earth_quake.tres" id="3_special"]
+
+[ext_resource type="SpriteFrames" path="res://resources/pets/frames/frames_earth_armor_dragon.tres" id="4_frames"]
+
+[resource]
+script = ExtResource("1_pet_data")
+id = &"earth_armor_dragon"
+display_name = "大地甲龍"
+element = 4
+max_hp = 120.0
+attack = 16.0
+defense = 24.0
+move_speed = 3.0
+basic_attack = ExtResource("2_basic")
+special_skill = ExtResource("3_special")
+capture_difficulty = 0.65
+sprite_frames = ExtResource("4_frames")
+visual_scale = 1.0

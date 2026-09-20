@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PetData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/pet_data.gd" id="1_pet_data"]
+[ext_resource type="SpriteFrames" path="res://resources/pets/frames/frames_eggshell_dragon.tres" id="4_frames"]
+[ext_resource type="Resource" path="res://resources/skills/skill_bite.tres" id="2_basic"]
+[ext_resource type="Resource" path="res://resources/skills/skill_vine_crash.tres" id="3_special"]
+
+[resource]
+script = ExtResource("1_pet_data")
+id = &"eggshell_dragon"
+display_name = "蛋殼龍"
+element = 2
+max_hp = 100.0
+attack = 15.0
+defense = 20.0
+move_speed = 3.5
+basic_attack = ExtResource("2_basic")
+special_skill = ExtResource("3_special")
+capture_difficulty = 0.5
+sprite_frames = ExtResource("4_frames")
+visual_scale = 1.0

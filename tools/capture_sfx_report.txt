@@ -1,0 +1,8 @@
+Capture SFX: 44100 Hz, mono, signed 16-bit PCM
+Metrics measured from decoded WAV; dBFS reference = 32768.
+File          Duration (s)  Samples  Peak (dBFS)  RMS (dBFS)
+throw.wav         0.180000     7938      -3.0000    -16.5248
+land.wav          0.150000     6615      -3.0000    -15.6852
+shake.wav         0.100000     4410      -3.0000    -17.9053
+success.wav       0.900000    39690      -3.0000    -15.6307
+fail.wav          0.500000    22050      -3.0000    -13.6164

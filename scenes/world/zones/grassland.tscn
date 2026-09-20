@@ -1,0 +1,212 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/zone.gd" id="1_zone"]
+
+[sub_resource type="PlaneMesh" id="GroundPlane"]
+size = Vector2(60.0, 60.0)
+
+[sub_resource type="StandardMaterial3D" id="GroundMat"]
+albedo_color = Color(0.33, 0.5, 0.26, 1.0)
+
+[sub_resource type="CylinderMesh" id="TrunkMesh"]
+top_radius = 0.4
+bottom_radius = 0.5
+height = 3.0
+radial_segments = 8
+
+[sub_resource type="StandardMaterial3D" id="TrunkMat"]
+albedo_color = Color(0.35, 0.25, 0.16, 1.0)
+
+[sub_resource type="SphereMesh" id="CrownMesh"]
+radius = 2.0
+height = 4.0
+radial_segments = 12
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="CrownMat"]
+albedo_color = Color(0.24, 0.45, 0.2, 1.0)
+
+[sub_resource type="CylinderShape3D" id="TrunkShape"]
+radius = 0.5
+height = 3.0
+
+[sub_resource type="BoxMesh" id="RockMesh"]
+size = Vector3(1.6, 1.2, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="RockMat"]
+albedo_color = Color(0.45, 0.44, 0.42, 1.0)
+
+[sub_resource type="BoxShape3D" id="RockShape"]
+size = Vector3(1.6, 1.2, 1.4)
+
+[node name="Grassland" type="Node3D"]
+script = ExtResource("1_zone")
+zone_id = &"grassland"
+display_name = "草原"
+has_element = true
+element = 2
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("GroundPlane")
+material_override = SubResource("GroundMat")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Tree1Trunk" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.5, -9)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Tree1Trunk"]
+mesh = SubResource("TrunkMesh")
+material_override = SubResource("TrunkMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Tree1Trunk"]
+shape = SubResource("TrunkShape")
+
+[node name="Tree1Crown" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 4.0, -9)
+mesh = SubResource("CrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Tree2Trunk" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5, -13)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Tree2Trunk"]
+mesh = SubResource("TrunkMesh")
+material_override = SubResource("TrunkMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Tree2Trunk"]
+shape = SubResource("TrunkShape")
+
+[node name="Tree2Crown" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4.0, -13)
+mesh = SubResource("CrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Tree3Trunk" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.5, 8)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Tree3Trunk"]
+mesh = SubResource("TrunkMesh")
+material_override = SubResource("TrunkMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Tree3Trunk"]
+shape = SubResource("TrunkShape")
+
+[node name="Tree3Crown" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 4.0, 8)
+mesh = SubResource("CrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Tree4Trunk" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.5, 14)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Tree4Trunk"]
+mesh = SubResource("TrunkMesh")
+material_override = SubResource("TrunkMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Tree4Trunk"]
+shape = SubResource("TrunkShape")
+
+[node name="Tree4Crown" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4.0, 14)
+mesh = SubResource("CrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Tree5Trunk" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, 2)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Tree5Trunk"]
+mesh = SubResource("TrunkMesh")
+material_override = SubResource("TrunkMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Tree5Trunk"]
+shape = SubResource("TrunkShape")
+
+[node name="Tree5Crown" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4.0, 2)
+mesh = SubResource("CrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Tree6Trunk" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 19)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Tree6Trunk"]
+mesh = SubResource("TrunkMesh")
+material_override = SubResource("TrunkMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Tree6Trunk"]
+shape = SubResource("TrunkShape")
+
+[node name="Tree6Crown" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4.0, 19)
+mesh = SubResource("CrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Rock1" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.6, -17)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Rock1"]
+mesh = SubResource("RockMesh")
+material_override = SubResource("RockMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Rock1"]
+shape = SubResource("RockShape")
+
+[node name="Rock2" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.9063, 0, -0.4226, 0, 1, 0, 0.4226, 0, 0.9063, 16, 0.6, -3)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Rock2"]
+mesh = SubResource("RockMesh")
+material_override = SubResource("RockMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Rock2"]
+shape = SubResource("RockShape")
+
+[node name="Rock3" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.6428, 0, -0.766, 0, 1, 0, 0.766, 0, 0.6428, -17, 0.6, -19)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Rock3"]
+mesh = SubResource("RockMesh")
+material_override = SubResource("RockMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Rock3"]
+shape = SubResource("RockShape")
+
+[node name="Rock4" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.2588, 0, -0.9659, 0, 1, 0, 0.9659, 0, 0.2588, 9, 0.6, 11)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Rock4"]
+mesh = SubResource("RockMesh")
+material_override = SubResource("RockMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Rock4"]
+shape = SubResource("RockShape")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="PlayerSpawn" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="EggshellDragonSpawn" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 0, 2.0)

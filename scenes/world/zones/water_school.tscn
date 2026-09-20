@@ -1,0 +1,151 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/zone.gd" id="1_zone"]
+
+[sub_resource type="PlaneMesh" id="GroundPlane"]
+size = Vector2(44.0, 44.0)
+
+[sub_resource type="StandardMaterial3D" id="GroundMat"]
+albedo_color = Color(0.3, 0.42, 0.46, 1.0)
+
+[sub_resource type="BoxMesh" id="SchoolBody"]
+size = Vector3(26.0, 16.0, 14.0)
+
+[sub_resource type="StandardMaterial3D" id="SchoolMat"]
+albedo_color = Color(0.72, 0.72, 0.68, 1.0)
+
+[sub_resource type="BoxShape3D" id="SchoolShape"]
+size = Vector3(26.0, 16.0, 14.0)
+
+[sub_resource type="BoxMesh" id="FloorBand"]
+size = Vector3(26.6, 0.4, 14.6)
+
+[sub_resource type="StandardMaterial3D" id="BandMat"]
+albedo_color = Color(0.5, 0.55, 0.6, 1.0)
+
+[sub_resource type="BoxMesh" id="RoofBox"]
+size = Vector3(27.0, 0.6, 15.0)
+
+[sub_resource type="BoxMesh" id="AnnexBox"]
+size = Vector3(8.0, 7.0, 8.0)
+
+[sub_resource type="BoxShape3D" id="AnnexShape"]
+size = Vector3(8.0, 7.0, 8.0)
+
+[sub_resource type="BoxMesh" id="ToiletBox"]
+size = Vector3(7.0, 4.0, 6.0)
+
+[sub_resource type="StandardMaterial3D" id="ToiletMat"]
+albedo_color = Color(0.62, 0.66, 0.7, 1.0)
+
+[sub_resource type="BoxShape3D" id="ToiletShape"]
+size = Vector3(7.0, 4.0, 6.0)
+
+[sub_resource type="BoxMesh" id="PuddleBox"]
+size = Vector3(16.0, 0.06, 10.0)
+
+[sub_resource type="StandardMaterial3D" id="WaterMat"]
+albedo_color = Color(0.3, 0.6, 0.85, 0.55)
+transparency = 1
+
+[sub_resource type="CylinderMesh" id="PoolMesh"]
+top_radius = 5.0
+bottom_radius = 5.0
+height = 0.4
+radial_segments = 16
+
+[sub_resource type="BoxMesh" id="PoolRim"]
+size = Vector3(11.0, 0.5, 11.0)
+
+[sub_resource type="StandardMaterial3D" id="RimMat"]
+albedo_color = Color(0.55, 0.58, 0.6, 1.0)
+
+[node name="WaterSchool" type="Node3D"]
+script = ExtResource("1_zone")
+zone_id = &"water_school"
+display_name = "水系學校"
+has_element = true
+element = 1
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("GroundPlane")
+material_override = SubResource("GroundMat")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="SchoolBuilding" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.0, -8.0)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/SchoolBuilding"]
+mesh = SubResource("SchoolBody")
+material_override = SubResource("SchoolMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/SchoolBuilding"]
+shape = SubResource("SchoolShape")
+
+[node name="FloorLine1" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0, -8.0)
+mesh = SubResource("FloorBand")
+material_override = SubResource("BandMat")
+
+[node name="FloorLine2" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.0, -8.0)
+mesh = SubResource("FloorBand")
+material_override = SubResource("BandMat")
+
+[node name="FloorLine3" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0, -8.0)
+mesh = SubResource("FloorBand")
+material_override = SubResource("BandMat")
+
+[node name="Roof" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.3, -8.0)
+mesh = SubResource("RoofBox")
+material_override = SubResource("BandMat")
+
+[node name="Annex" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0, 3.5, -8.0)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/Annex"]
+mesh = SubResource("AnnexBox")
+material_override = SubResource("SchoolMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/Annex"]
+shape = SubResource("AnnexShape")
+
+[node name="ToiletBlock" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0, 2.0, 2.0)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/ToiletBlock"]
+mesh = SubResource("ToiletBox")
+material_override = SubResource("ToiletMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/ToiletBlock"]
+shape = SubResource("ToiletShape")
+
+[node name="PlaygroundPuddle" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 0.12, 9.0)
+mesh = SubResource("PuddleBox")
+material_override = SubResource("WaterMat")
+
+[node name="Pool" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0, 0.2, 13.0)
+mesh = SubResource("PoolMesh")
+material_override = SubResource("WaterMat")
+
+[node name="PoolRim" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0, 0.15, 13.0)
+mesh = SubResource("PoolRim")
+material_override = SubResource("RimMat")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="WaterSnakeSpawn" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0, 0, 6.0)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1_skill_data"]
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"claw"
+display_name = "爪擊"
+element = 0
+power = 18.0
+cooldown = 0.7
+cast_time = 0.0
+cast_range = 1.8
+animation_name = &"attack"

@@ -1,0 +1,101 @@
+[gd_resource type="SpriteFrames" load_steps=20 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_basic_0.png" id="1_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_basic_1.png" id="2_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_basic_2.png" id="3_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_basic_3.png" id="4_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_great_0.png" id="5_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_great_1.png" id="6_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_great_2.png" id="7_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/ball/ball_great_3.png" id="8_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/success/success_0.png" id="9_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/success/success_1.png" id="10_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/success/success_2.png" id="11_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/success/success_3.png" id="12_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/success/success_4.png" id="13_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/success/success_5.png" id="14_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/fail/fail_0.png" id="15_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/fail/fail_1.png" id="16_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/fail/fail_2.png" id="17_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/fail/fail_3.png" id="18_fx"]
+[ext_resource type="Texture2D" path="res://assets/fx/fail/fail_4.png" id="19_fx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fx")
+}],
+"loop": true,
+"name": &"ball_basic",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fx")
+}],
+"loop": true,
+"name": &"ball_great",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fx")
+}],
+"loop": false,
+"name": &"success",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fx")
+}],
+"loop": false,
+"name": &"fail",
+"speed": 12.0
+}]

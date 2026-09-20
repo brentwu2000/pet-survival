@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1_skill_data"]
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"assemble_shift"
+display_name = "組裝變形"
+element = 5
+power = 16.0
+cooldown = 6.5
+cast_time = 0.7
+cast_range = 2.5
+animation_name = &"skill"

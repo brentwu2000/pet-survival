@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1_skill_data"]
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"rock_shot"
+display_name = "岩石飛出"
+element = 4
+power = 15.0
+cooldown = 1.4
+cast_time = 0.0
+cast_range = 6.5
+animation_name = &"attack"

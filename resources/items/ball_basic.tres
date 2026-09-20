@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BallData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ball_data.gd" id="1_ball_data"]
+
+[resource]
+script = ExtResource("1_ball_data")
+id = &"ball_basic"
+display_name = "捕捉球"
+power = 1.0
+guaranteed = false

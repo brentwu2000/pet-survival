@@ -1,0 +1,179 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/zone.gd" id="1_zone"]
+
+[sub_resource type="PlaneMesh" id="GroundPlane"]
+size = Vector2(44.0, 44.0)
+
+[sub_resource type="StandardMaterial3D" id="GroundMat"]
+albedo_color = Color(0.44, 0.37, 0.27, 1.0)
+
+[sub_resource type="BoxMesh" id="HouseBody"]
+size = Vector3(6.0, 4.5, 7.0)
+
+[sub_resource type="StandardMaterial3D" id="HouseMat"]
+albedo_color = Color(0.78, 0.74, 0.66, 1.0)
+
+[sub_resource type="CylinderMesh" id="HouseRoof"]
+top_radius = 0.0
+bottom_radius = 5.4
+height = 3.0
+radial_segments = 4
+
+[sub_resource type="StandardMaterial3D" id="RoofMat"]
+albedo_color = Color(0.55, 0.3, 0.24, 1.0)
+
+[sub_resource type="BoxShape3D" id="HouseShape"]
+size = Vector3(6.0, 4.5, 7.0)
+
+[sub_resource type="BoxMesh" id="HomeBody"]
+size = Vector3(8.0, 5.5, 9.0)
+
+[sub_resource type="StandardMaterial3D" id="HomeMat"]
+albedo_color = Color(0.86, 0.8, 0.6, 1.0)
+
+[sub_resource type="CylinderMesh" id="HomeRoof"]
+top_radius = 0.0
+bottom_radius = 7.2
+height = 3.6
+radial_segments = 4
+
+[sub_resource type="StandardMaterial3D" id="HomeRoofMat"]
+albedo_color = Color(0.7, 0.35, 0.22, 1.0)
+
+[sub_resource type="BoxShape3D" id="HomeShape"]
+size = Vector3(8.0, 5.5, 9.0)
+
+[sub_resource type="BoxMesh" id="BasePad"]
+size = Vector3(12.0, 0.1, 12.0)
+
+[sub_resource type="StandardMaterial3D" id="BasePadMat"]
+albedo_color = Color(0.55, 0.52, 0.3, 1.0)
+
+[node name="Village" type="Node3D"]
+script = ExtResource("1_zone")
+zone_id = &"village"
+display_name = "聚落"
+has_element = false
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("GroundPlane")
+material_override = SubResource("GroundMat")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="House1Body" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2.25, -8)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/House1Body"]
+mesh = SubResource("HouseBody")
+material_override = SubResource("HouseMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/House1Body"]
+shape = SubResource("HouseShape")
+
+[node name="House1Roof" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(0.7071, 0, -0.7071, 0, 1, 0, 0.7071, 0, 0.7071, -13, 6.0, -8)
+mesh = SubResource("HouseRoof")
+material_override = SubResource("RoofMat")
+
+[node name="House2Body" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, 0.9397, -4, 2.25, -12)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/House2Body"]
+mesh = SubResource("HouseBody")
+material_override = SubResource("HouseMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/House2Body"]
+shape = SubResource("HouseShape")
+
+[node name="House2Roof" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(0.4226, 0, -0.9063, 0, 1, 0, 0.9063, 0, 0.4226, -4, 6.0, -12)
+mesh = SubResource("HouseRoof")
+material_override = SubResource("RoofMat")
+
+[node name="House3Body" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.9659, 0, 0.2588, 0, 1, 0, -0.2588, 0, 0.9659, 9, 2.25, -9)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/House3Body"]
+mesh = SubResource("HouseBody")
+material_override = SubResource("HouseMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/House3Body"]
+shape = SubResource("HouseShape")
+
+[node name="House3Roof" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(0.866, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866, 9, 6.0, -9)
+mesh = SubResource("HouseRoof")
+material_override = SubResource("RoofMat")
+
+[node name="House4Body" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.9848, 0, -0.1736, 0, 1, 0, 0.1736, 0, 0.9848, 14, 2.25, 3)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/House4Body"]
+mesh = SubResource("HouseBody")
+material_override = SubResource("HouseMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/House4Body"]
+shape = SubResource("HouseShape")
+
+[node name="House4Roof" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(0.5736, 0, -0.8192, 0, 1, 0, 0.8192, 0, 0.5736, 14, 6.0, 3)
+mesh = SubResource("HouseRoof")
+material_override = SubResource("RoofMat")
+
+[node name="House5Body" type="StaticBody3D" parent="Props"]
+transform = Transform3D(0.9903, 0, 0.1392, 0, 1, 0, -0.1392, 0, 0.9903, -11, 2.25, 6)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/House5Body"]
+mesh = SubResource("HouseBody")
+material_override = SubResource("HouseMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/House5Body"]
+shape = SubResource("HouseShape")
+
+[node name="House5Roof" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(0.7986, 0, -0.6018, 0, 1, 0, 0.6018, 0, 0.7986, -11, 6.0, 6)
+mesh = SubResource("HouseRoof")
+material_override = SubResource("RoofMat")
+
+[node name="HomeBody" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 2.75, 12.0)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Mesh" type="MeshInstance3D" parent="Props/HomeBody"]
+mesh = SubResource("HomeBody")
+material_override = SubResource("HomeMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Props/HomeBody"]
+shape = SubResource("HomeShape")
+
+[node name="HomeRoof" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(0.7071, 0, -0.7071, 0, 1, 0, 0.7071, 0, 0.7071, 2.0, 7.3, 12.0)
+mesh = SubResource("HomeRoof")
+material_override = SubResource("HomeRoofMat")
+
+[node name="BaseCorePad" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 0.14, -2.0)
+mesh = SubResource("BasePad")
+material_override = SubResource("BasePadMat")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="BaseCoreSpawn" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 0, -2.0)
+
+[node name="HomeDoorSpawn" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 0, 7.0)

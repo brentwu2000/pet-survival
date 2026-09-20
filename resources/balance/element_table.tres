@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ElementTable" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/element_table.gd" id="1_element_table"]
+
+[resource]
+script = ExtResource("1_element_table")
+strong_against = {
+0: [2, 5],
+1: [0],
+2: [1, 4],
+3: [1, 5],
+4: [0, 3],
+5: [2, 4]
+}

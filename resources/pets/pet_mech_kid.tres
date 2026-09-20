@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PetData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/pet_data.gd" id="1_pet_data"]
+[ext_resource type="Resource" path="res://resources/skills/skill_metal_bash.tres" id="2_basic"]
+[ext_resource type="Resource" path="res://resources/skills/skill_assemble_shift.tres" id="3_special"]
+
+[ext_resource type="SpriteFrames" path="res://resources/pets/frames/frames_mech_kid.tres" id="4_frames"]
+
+[resource]
+script = ExtResource("1_pet_data")
+id = &"mech_kid"
+display_name = "機械小人"
+element = 5
+max_hp = 90.0
+attack = 14.0
+defense = 22.0
+move_speed = 3.2
+basic_attack = ExtResource("2_basic")
+special_skill = ExtResource("3_special")
+capture_difficulty = 0.50
+sprite_frames = ExtResource("4_frames")
+visual_scale = 1.0

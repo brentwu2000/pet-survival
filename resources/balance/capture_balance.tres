@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CaptureBalance" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/capture_balance.gd" id="1_capture_balance"]
+
+[resource]
+script = ExtResource("1_capture_balance")
+hp_modifier_at_full = 0.3
+hp_modifier_at_empty = 1.0
+rarity_modifier_at_easy = 1.0
+rarity_modifier_at_hard = 0.45

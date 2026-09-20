@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/skill_data.gd" id="1_skill_data"]
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"electro_storm"
+display_name = "電磁風暴"
+element = 3
+power = 26.0
+cooldown = 6.0
+cast_time = 0.5
+cast_range = 5.5
+animation_name = &"skill"
